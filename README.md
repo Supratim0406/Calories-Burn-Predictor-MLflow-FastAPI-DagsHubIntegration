@@ -1,2 +1,2 @@
-# Modical Insurance Cost Predictor
+# Calories Burn Predictor
 
