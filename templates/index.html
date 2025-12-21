@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calories Burn Prediction</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+
+        <h2 class="text-2xl font-bold text-center mb-6">
+            Calories Burn Prediction
+        </h2>
+
+        <form action="/predict" method="post" class="space-y-4">
+
+            <!-- Gender -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Gender</label>
+                <select name="Gender" required
+                    class="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-blue-300">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <!-- Age -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Age</label>
+                <input type="number" name="Age" step="1" required
+                    class="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-blue-300">
+            </div>
+
+            <!-- Height -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Height (cm)</label>
+                <input type="number" name="Height" step="0.1" required
+                    class="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-blue-300">
+            </div>
+
+            <!-- Weight -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Weight (kg)</label>
+                <input type="number" name="Weight" step="0.1" required
+                    class="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-blue-300">
+            </div>
+
+            <!-- Duration -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Duration (minutes)</label>
+                <input type="number" name="Duration" step="0.1" required
+                    class="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-blue-300">
+            </div>
+
+            <!-- Heart Rate -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Heart Rate</label>
+                <input type="number" name="Heart_Rate" step="1" required
+                    class="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-blue-300">
+            </div>
+
+            <!-- Body Temp -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Body Temperature (°C)</label>
+                <input type="number" name="Body_Temp" step="0.1" required
+                    class="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-blue-300">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+                Predict Calories
+            </button>
+        </form>
+
+        <!-- Prediction Result -->
+        {% if Calories %}
+        <div class="mt-6 bg-green-100 border-l-4 border-green-500 p-4 text-green-700 font-semibold">
+            Predicted Calories Burned: {{ Calories }}
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
