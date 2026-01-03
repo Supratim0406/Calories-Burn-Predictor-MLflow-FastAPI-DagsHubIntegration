@@ -24,8 +24,8 @@ This project demonstrates the integration of MLflow with DAGsHub for experiment 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/vijaytakbhate2002/remote-experiment-tracking-with-mlflow-dagshub.git
-   cd remote-experiment-tracking-with-mlflow-dagshub
+   git clone https://github.com/Supratim0406/Calories-Burn-Predictor-MLflow-FastAPI-DagsHubIntegration.git
+   cd Calories-Burn-Predictor-MLflow-FastAPI-DagsHubIntegration
    ```
 
 2. Set up DAGsHub credentials in Git Bash:
@@ -97,8 +97,9 @@ The following environment variables need to be set:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Demo
+## 🎥 Demo
 
+[▶️ Watch Demo Video](https://github.com/user-attachments/assets/e4c34b2d-2f4a-4c2f-b482-927054a6396e)
 
 ## 📝 License
 
@@ -114,7 +115,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - DAGsHub for providing the remote tracking infrastructure 
 
 ## Screenshot
-
 <img width="1611" height="955" alt="image" src="https://github.com/user-attachments/assets/febf49c2-a108-499b-96b6-dc905a1f3e15" />
 
 ## Swagger -
