@@ -1,13 +1,31 @@
 from fastapi import FastAPI, Form, Request  # Form - Reads form input values from HTML  # Request - Required by FastAPI when using Jinja templates
 from fastapi.templating import Jinja2Templates  # Allows FastAPI to render HTML pages.
 import pandas as pd
-import joblib
+from dotenv import load_dotenv
+import mlflow
+import os
+
+
+# Load environment variables from .env
+load_dotenv()
+
+MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
+MLFLOW_TRACKING_USERNAME = os.getenv("MLFLOW_TRACKING_USERNAME")
+MLFLOW_TRACKING_PASSWORD = os.getenv("MLFLOW_TRACKING_PASSWORD")
 
 # Fast API -> Backend web framework
 app = FastAPI(title="Calories Burn Prediction")
 
-# Load ML pipeline
-pipeline = joblib.load("best_model.pkl")
+
+# Load Production model from the registry
+mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+
+pipeline = mlflow.pyfunc.load_model(
+    "models:/Calories-Burn-Regressor/Production"
+)
+
+print("✅ Model loaded successfully")
+
 
 # Setup templates folder (Tells FastAPI where your HTML files are)
 templates = Jinja2Templates(directory="templates")
