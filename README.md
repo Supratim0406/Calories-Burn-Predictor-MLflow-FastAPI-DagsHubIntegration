@@ -32,7 +32,7 @@ This project demonstrates the integration of MLflow with DAGsHub for experiment 
    ```Powershell
    $env:MLFLOW_TRACKING_URI="https://dagshub.com/<username>/<repo-name>.mlflow"
    $env:MLFLOW_TRACKING_USERNAME="<your-dagshub-username>"
-  $env:MLFLOW_TRACKING_PASSWORD="<your-dagshub-token>"
+   $env:MLFLOW_TRACKING_PASSWORD="<your-dagshub-token>"
 
    ```
 
