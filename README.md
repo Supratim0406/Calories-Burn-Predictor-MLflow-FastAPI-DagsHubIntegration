@@ -23,27 +23,28 @@ This project demonstrates the integration of MLflow with DAGsHub for experiment 
 ## 🔧 Setup
 
 1. Clone the repository:
-   ```bash
+   ```Powershell
    git clone https://github.com/Supratim0406/Calories-Burn-Predictor-MLflow-FastAPI-DagsHubIntegration.git
    cd Calories-Burn-Predictor-MLflow-FastAPI-DagsHubIntegration
    ```
 
-2. Set up DAGsHub credentials in Git Bash:
-   ```bash
-   export MLFLOW_TRACKING_URI=https://dagshub.com/<username>/<repo-name>.mlflow
-   export MLFLOW_TRACKING_USERNAME=<your-dagshub-username>
-   export MLFLOW_TRACKING_PASSWORD=<your-dagshub-token>
+2. Set up DAGsHub credentials in Pwershell (For Current Session):
+   ```Powershell
+   $env:MLFLOW_TRACKING_URI="https://dagshub.com/<username>/<repo-name>.mlflow"
+   $env:MLFLOW_TRACKING_USERNAME="<your-dagshub-username>"
+  $env:MLFLOW_TRACKING_PASSWORD="<your-dagshub-token>"
+
    ```
 
 3. Install dependencies:
-   ```bash
+   ```Powershell
    pip install -r requirements.txt
    ```
 
 ## 🏃‍♂️ Running the Project
 
 1. Run the MLflow project:
-   ```bash
+   ```Powershell
     python -m uvicorn app:app --reload
    ```
 
